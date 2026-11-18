@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DriveEase – Premium Car Rental Marketplace | Find your ride. Own the journey.</title>
+  
+  <!-- Favicon / Meta -->
+  <meta name="description" content="DriveEase is India's premium car rental marketplace. Rent verified SUVs, sedans, luxury cars, and electric vehicles across Chennai, Bangalore, Mumbai, and more." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg de-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <div class="brand-icon-box">
+          <i class="bi bi-car-front-fill"></i>
+        </div>
+        <span class="brand-text">Drive<span>Ease</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#driveNavbar" aria-controls="driveNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="driveNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cars.html">Explore Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#how-it-works">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#why-driveease">About Us</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Wishlist quick link -->
+          <a href="profile.html?tab=favorites" class="nav-wishlist-btn" title="View Saved Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="nav-wishlist-badge">0</span>
+          </a>
+
+          <!-- Dynamic Auth Container -->
+          <div id="navAuthContainer" class="d-flex align-items-center gap-2">
+            <a href="login.html" class="btn-drive-outline btn-sm-custom">Log In</a>
+            <a href="register.html" class="btn-drive-lime btn-sm-custom">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="hero-badge">
+            <i class="bi bi-stars"></i>
+            <span>Premium Automotive Marketplace</span>
+          </div>
+
+          <h1 class="hero-title">
+            Your next journey <br />
+            <span>starts here.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Discover the perfect ride for every journey. Rent premium cars with comfort, flexibility, and confidence across India's top metropolitan hubs.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="cars.html" class="btn-drive-lime btn-lg-custom">
+              <i class="bi bi-compass"></i> Explore Cars
+            </a>
+            <a href="#how-it-works" class="btn-drive-outline btn-lg-custom text-white border-white border-opacity-25">
+              <i class="bi bi-play-circle"></i> How It Works
+            </a>
+          </div>
+
+          <!-- Hero Stats Strip -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <h4>500<span>+</span></h4>
+              <p>Verified Vehicles</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>4.9<span>★</span></h4>
+              <p>Customer Rating</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>6<span>+</span></h4>
+              <p>Major Cities</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>24<span>/7</span></h4>
+              <p>Roadside Care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Search Booking Widget -->
+  <section class="container search-widget-wrapper">
+    <div class="search-booking-card">
+      <form id="heroSearchForm">
+        <div class="search-form-row">
+          <!-- Location -->
+          <div class="search-field-group">
+            <label class="search-field-label">
+              <i class="bi bi-geo-alt-fill"></i> Pickup Hub
+            </label>
+            <select class="search-input-box" id="heroLocationSelect">
+              <option value="All">All Locations</option>
+              <option value="Chennai" selected>Chennai</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Salem">Salem</option>
+              <option value="Coimbatore">Coimbatore</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+          </div>
+
+          <!-- Pickup Date -->
+          <div class="search-field-group">
+            <label class="search-field-label">
+              <i class="bi bi-calendar-event"></i> Pickup Date
+            </label>
+            <input type="date" class="search-input-box" id="heroPickupDate" />
+          </div>
+
+          <!-- Return Date -->
+          <div class="search-field-group">
+            <label class="search-field-label">
+              <i class="bi bi-calendar-check"></i> Return Date
+            </label>
+            <input type="date" class="search-input-box" id="heroReturnDate" />
+          </div>
+
+          <!-- Vehicle Type -->
+          <div class="search-field-group">
+            <label class="search-field-label">
+              <i class="bi bi-sliders"></i> Vehicle Type
+            </label>
+            <select class="search-input-box" id="heroCategorySelect">
+              <option value="All">All Categories</option>
+              <option value="SUV">SUVs</option>
+              <option value="Sedan">Sedans</option>
+              <option value="Hatchback">Hatchbacks</option>
+              <option value="Luxury">Luxury</option>
+              <option value="Electric">Electric Cars</option>
+            </select>
+          </div>
+
+          <!-- Search Button -->
+          <div class="search-btn-container">
+            <button type="submit" class="btn-drive-lime btn-search-submit">
+              <i class="bi bi-search"></i> Search Cars
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Popular Categories -->
+  <section class="py-5 mt-4">
+    <div class="container py-4">
+      <div class="d-flex flex-wrap align-items-end justify-content-between mb-4 pb-2">
+        <div>
+          <span class="section-tag"><i class="bi bi-grid-fill"></i> Vehicle Fleet</span>
+          <h2 class="section-title">Popular Categories</h2>
+          <p class="section-subtitle">Find the vehicle category engineered perfectly for your upcoming journey.</p>
+        </div>
+        <a href="cars.html" class="btn-drive-outline mt-2 mt-md-0">View All Cars <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="row g-4">
+        <!-- SUV -->
+        <div class="col-6 col-md-4 col-lg">
+          <div class="category-card" onclick="window.location.href='cars.html?category=SUV'">
+            <img src="assets/images/categories/suv.jpg" alt="SUVs" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+            <div class="category-content">
+              <div class="category-title">
+                <span>SUVs</span>
+                <div class="category-arrow-icon"><i class="bi bi-arrow-up-right"></i></div>
+              </div>
+              <span class="category-count">6 Vehicles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sedan -->
+        <div class="col-6 col-md-4 col-lg">
+          <div class="category-card" onclick="window.location.href='cars.html?category=Sedan'">
+            <img src="assets/images/categories/sedan.jpg" alt="Sedans" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+            <div class="category-content">
+              <div class="category-title">
+                <span>Sedans</span>
+                <div class="category-arrow-icon"><i class="bi bi-arrow-up-right"></i></div>
+              </div>
+              <span class="category-count">2 Vehicles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hatchback -->
+        <div class="col-6 col-md-4 col-lg">
+          <div class="category-card" onclick="window.location.href='cars.html?category=Hatchback'">
+            <img src="assets/images/categories/hatchback.jpg" alt="Hatchbacks" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+            <div class="category-content">
+              <div class="category-title">
+                <span>Hatchbacks</span>
+                <div class="category-arrow-icon"><i class="bi bi-arrow-up-right"></i></div>
+              </div>
+              <span class="category-count">1 Vehicle</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Luxury -->
+        <div class="col-6 col-md-4 col-lg">
+          <div class="category-card" onclick="window.location.href='cars.html?category=Luxury'">
+            <img src="assets/images/categories/luxury.jpg" alt="Luxury" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+            <div class="category-content">
+              <div class="category-title">
+                <span>Luxury</span>
+                <div class="category-arrow-icon"><i class="bi bi-arrow-up-right"></i></div>
+              </div>
+              <span class="category-count">3 Vehicles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Electric -->
+        <div class="col-6 col-md-4 col-lg">
+          <div class="category-card" onclick="window.location.href='cars.html?category=Electric'">
+            <img src="assets/images/categories/electric.jpg" alt="Electric Cars" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+            <div class="category-content">
+              <div class="category-title">
+                <span>Electric</span>
+                <div class="category-arrow-icon"><i class="bi bi-arrow-up-right"></i></div>
+              </div>
+              <span class="category-count">1 Vehicle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Cars Section -->
+  <section class="py-5 bg-white">
+    <div class="container py-4">
+      <div class="d-flex flex-wrap align-items-end justify-content-between mb-4 pb-2">
+        <div>
+          <span class="section-tag"><i class="bi bi-star-fill"></i> Handpicked Fleet</span>
+          <h2 class="section-title">Featured Cars</h2>
+          <p class="section-subtitle">Experience our most requested and highly-rated vehicles, thoroughly sanitized and road-tested.</p>
+        </div>
+        <a href="cars.html" class="btn-drive-outline mt-2 mt-md-0">Explore All Cars <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="row g-4" id="homeFeaturedCarsContainer">
+        <!-- Rendered dynamically by home script -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Why DriveEase? -->
+  <section class="py-5" id="why-driveease">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="section-tag"><i class="bi bi-shield-check"></i> The DriveEase Advantage</span>
+        <h2 class="section-title">Why Rent With DriveEase?</h2>
+        <p class="section-subtitle mx-auto">We combine European rental standards with hassle-free digital convenience, ensuring uncompromised safety and comfort.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <h4>Easy Booking</h4>
+            <p>Seamless paperless reservations in under two minutes with instant confirmation and transparent booking terms.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-tag-fill"></i>
+            </div>
+            <h4>Affordable Pricing</h4>
+            <p>All-inclusive transparent rates with no surprise taxes, low security deposits, and flexible hourly or daily packages.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-check2-circle"></i>
+            </div>
+            <h4>Verified Vehicles</h4>
+            <p>Every vehicle undergoes a stringent 45-point mechanical and safety inspection before keys are handed over.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-headset"></i>
+            </div>
+            <h4>24/7 Support</h4>
+            <p>Dedicated round-the-clock roadside assistance, emergency towing, and on-call concierge wherever you travel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works (3 Steps) -->
+  <section class="py-5 bg-white" id="how-it-works">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="section-tag"><i class="bi bi-signpost-split-fill"></i> Simple Process</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle mx-auto">Rent your dream car in three effortless steps and hit the open road in complete confidence.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number-badge">01</div>
+            <h4>Choose Your Car</h4>
+            <p>Browse our extensive fleet of hatchbacks, family SUVs, executive sedans, and luxury sports cars with verified real photography.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number-badge">02</div>
+            <h4>Book Your Ride</h4>
+            <p>Pick your convenient pickup hub, customize trip insurance add-ons, and confirm your reservation with zero upfront friction.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number-badge">03</div>
+            <h4>Enjoy Your Journey</h4>
+            <p>Collect your spotless, tank-full vehicle at the designated hub or opt for doorstep delivery and own your journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promotional Offers Section -->
+  <section class="py-5">
+    <div class="container py-2">
+      <div class="promo-banner-card">
+        <div class="row align-items-center g-0">
+          <div class="col-lg-7">
+            <div class="promo-banner-content">
+              <div class="promo-badge">
+                <i class="bi bi-gift-fill"></i> Exclusive First Ride Perk
+              </div>
+              <h2 class="promo-heading">Your first ride, made better.</h2>
+              <p class="promo-subtitle">
+                Get <strong class="text-white">15% OFF</strong> on your first booking with DriveEase. Use coupon code during simulated checkout.
+              </p>
+
+              <div class="coupon-box">
+                <span class="coupon-code" id="homeCouponCode">DRIVE15</span>
+                <button class="btn-copy-code" id="btnCopyCoupon" title="Copy coupon code">
+                  <i class="bi bi-copy"></i> Copy
+                </button>
+              </div>
+
+              <div>
+                <a href="cars.html" class="btn-drive-lime btn-lg-custom">
+                  Explore Offers <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block promo-img-col">
+            <img src="assets/images/banner-promo.jpg" alt="DriveEase Promotional Banner" onerror="handleImageError(this, 'assets/images/hero-car.jpg')" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials -->
+  <section class="py-5 bg-white">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="section-tag"><i class="bi bi-chat-quote-fill"></i> Testimonials</span>
+        <h2 class="section-title">What Our Drivers Say</h2>
+        <p class="section-subtitle mx-auto">Read authentic feedback from corporate travelers, weekend explorers, and road trip enthusiasts.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">
+              "Rented the Hyundai Creta for a family trip from Chennai to Pondicherry. The car was spotless, handed over punctually at the airport, and drove like a dream. DriveEase is now my go-to service."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/testimonials/avatar1.jpg" alt="Ananya Sharma" class="testimonial-avatar" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+              <div>
+                <div class="author-name">Ananya Sharma</div>
+                <div class="author-role">Product Designer &bull; Chennai</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">
+              "Booking the BMW 3 Series Gran Limousine for a corporate summit in Bangalore was completely effortless. Zero paperwork headaches, transparent pricing, and stellar vehicle condition."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/testimonials/avatar2.jpg" alt="Vikram Malhotra" class="testimonial-avatar" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+              <div>
+                <div class="author-name">Vikram Malhotra</div>
+                <div class="author-role">Founder, TechVentures &bull; Bangalore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">
+              "Took the Mahindra Thar 4x4 up the Western Ghats. The rugged beast performed flawlessly. Deposit was settled promptly back to my account within hours. Highly recommended!"
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/testimonials/avatar3.jpg" alt="Karthik Rajan" class="testimonial-avatar" onerror="handleImageError(this, 'assets/images/placeholder-car.jpg')" />
+              <div>
+                <div class="author-name">Karthik Rajan</div>
+                <div class="author-role">Travel Photographer &bull; Coimbatore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="de-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand Col -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand-title">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-car-front-fill"></i>
+            </div>
+            Drive<span>Ease</span>
+          </div>
+          <p class="footer-desc">
+            DriveEase is India's premier car rental marketplace. Redefining urban and highway mobility with verified vehicles, zero hidden costs, and exceptional customer experience.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-circle-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-circle-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-circle-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-circle-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Explore Cars</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#why-driveease">Why DriveEase</a></li>
+            <li><a href="profile.html?tab=bookings">My Bookings</a></li>
+          </ul>
+        </div>
+
+        <!-- Vehicle Hubs -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Active City Hubs</h4>
+          <ul class="footer-nav-list">
+            <li><a href="cars.html?location=Chennai">Chennai Airport & OMR</a></li>
+            <li><a href="cars.html?location=Bangalore">Bangalore Indiranagar</a></li>
+            <li><a href="cars.html?location=Salem">Salem Junction Hub</a></li>
+            <li><a href="cars.html?location=Coimbatore">Coimbatore Avinashi Rd</a></li>
+            <li><a href="cars.html?location=Hyderabad">Hyderabad HITEC City</a></li>
+            <li><a href="cars.html?location=Mumbai">Mumbai BKC Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Support -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Help & Support</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div>
+              <strong>24/7 Helpline:</strong><br />
+              +91 (044) 4800 2400
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div>
+              <strong>Support Email:</strong><br />
+              concierge@driveease.com
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div>
+              DriveEase Mobility Tower, Anna Salai, Chennai, TN 600002
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 DriveEase Technologies Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Rental Agreement</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cars-data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Homepage Specific Interactions
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Setup Hero Dates
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const defReturn = new Date(today);
+      defReturn.setDate(defReturn.getDate() + 4);
+
+      const pickupInput = document.getElementById("heroPickupDate");
+      const returnInput = document.getElementById("heroReturnDate");
+
+      if (pickupInput && returnInput) {
+        pickupInput.min = today.toISOString().split("T")[0];
+        pickupInput.value = tomorrow.toISOString().split("T")[0];
+        returnInput.min = pickupInput.value;
+        returnInput.value = defReturn.toISOString().split("T")[0];
+
+        pickupInput.addEventListener("change", () => {
+          returnInput.min = pickupInput.value;
+          if (new Date(returnInput.value) <= new Date(pickupInput.value)) {
+            const next = new Date(pickupInput.value);
+            next.setDate(next.getDate() + 1);
+            returnInput.value = next.toISOString().split("T")[0];
+          }
+        });
+      }
+
+      // 2. Search Widget Submission -> Redirect to cars.html with query params
+      const heroSearchForm = document.getElementById("heroSearchForm");
+      if (heroSearchForm) {
+        heroSearchForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const location = document.getElementById("heroLocationSelect").value;
+          const category = document.getElementById("heroCategorySelect").value;
+          const pickup = pickupInput.value;
+          const returnD = returnInput.value;
+
+          const query = new URLSearchParams();
+          if (location !== "All") query.set("location", location);
+          if (category !== "All") query.set("category", category);
+          if (pickup) query.set("pickup", pickup);
+          if (returnD) query.set("return", returnD);
+
+          window.location.href = `cars.html?${query.toString()}`;
+        });
+      }
+
+      // 3. Render 6 Featured Cars
+      const featuredContainer = document.getElementById("homeFeaturedCarsContainer");
+      if (featuredContainer) {
+        const featuredCars = CARS_DATABASE.filter(c => c.isFeatured).slice(0, 6);
+        featuredContainer.innerHTML = featuredCars
+          .map(car => generateCarCardHtml(car, "col-md-6 col-lg-4 mb-4"))
+          .join("");
+      }
+
+      // 4. Promo Code Copy Button
+      const copyBtn = document.getElementById("btnCopyCoupon");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", () => {
+          navigator.clipboard.writeText("DRIVE15").then(() => {
+            showToast("Coupon code DRIVE15 copied to clipboard!", "success");
+            copyBtn.innerHTML = '<i class="bi bi-check2"></i> Copied';
+            setTimeout(() => {
+              copyBtn.innerHTML = '<i class="bi bi-copy"></i> Copy';
+            }, 2500);
+          }).catch(() => {
+            showToast("Use promo code DRIVE15 at checkout", "info");
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
