@@ -1,0 +1,473 @@
+/* ==========================================================================
+   DriveEase – Car Listing & Filter System Styles
+   ========================================================================== */
+
+/* Page Header */
+.listing-hero-banner {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-slate) 100%);
+  color: #ffffff;
+  padding: 3.5rem 0 3rem 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.listing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(16, 229, 117, 0.15);
+  color: var(--accent-lime);
+  border: 1px solid rgba(16, 229, 117, 0.3);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.85rem;
+}
+
+.listing-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.listing-hero-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 600px;
+}
+
+/* ==========================================================================
+   Filter Sidebar
+   ========================================================================== */
+
+.filter-sidebar-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+  position: sticky;
+  top: 90px;
+}
+
+.filter-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+.filter-sidebar-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-reset-filters {
+  background: none;
+  border: none;
+  color: var(--accent-lime-active);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  transition: var(--transition-fast);
+}
+
+.btn-reset-filters:hover {
+  text-decoration: underline;
+  color: #065f46;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-group-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Custom Checkbox & Radio Styles */
+.filter-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.filter-item:hover {
+  color: var(--primary-dark);
+}
+
+.filter-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+}
+
+.filter-checkbox-label input[type="checkbox"],
+.filter-checkbox-label input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--accent-lime-active);
+  cursor: pointer;
+}
+
+.filter-item-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: var(--bg-subtle);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+/* Price Slider */
+.price-slider-container {
+  padding: 0.25rem 0;
+}
+
+.price-range-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.price-input-box {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  width: 100%;
+}
+
+.price-slider-track {
+  width: 100%;
+  accent-color: var(--accent-lime-active);
+  cursor: pointer;
+  height: 6px;
+  border-radius: 4px;
+}
+
+.price-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+/* ==========================================================================
+   Top Results Bar & Controls
+   ========================================================================== */
+
+.listing-controls-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  padding: 1.15rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-input-wrapper i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.search-cars-input {
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1rem 0.65rem 2.6rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  width: 100%;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.search-cars-input:focus {
+  background-color: #ffffff;
+  border-color: var(--accent-lime-active);
+  box-shadow: 0 0 0 3px rgba(16, 229, 117, 0.2);
+}
+
+.btn-clear-search {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: none;
+}
+
+.search-input-wrapper.has-text .btn-clear-search {
+  display: block;
+}
+
+.select-control-box {
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1.25rem 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.select-control-box:focus {
+  border-color: var(--accent-lime-active);
+}
+
+/* View Layout Switcher (Grid / List) */
+.view-switcher-group {
+  display: inline-flex;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem;
+  border: 1px solid var(--border-light);
+}
+
+.btn-view-toggle {
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-size: 1.05rem;
+}
+
+.btn-view-toggle.active {
+  background-color: #ffffff;
+  color: var(--primary-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Results Count & Active Chips */
+.results-summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.results-count-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.results-count-text span {
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.active-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-chip-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.filter-chip-remove:hover {
+  color: #ef4444;
+}
+
+.btn-clear-all-chips {
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.btn-clear-all-chips:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   List View Format for Car Cards
+   ========================================================================== */
+
+.cars-container.list-view .de-car-card {
+  flex-direction: row;
+  height: auto;
+  align-items: stretch;
+}
+
+.cars-container.list-view .card-img-wrapper {
+  width: 320px;
+  height: auto;
+  min-height: 220px;
+  flex-shrink: 0;
+}
+
+.cars-container.list-view .card-body-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cars-container.list-view .card-spec-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .cars-container.list-view .de-car-card {
+    flex-direction: column;
+  }
+  .cars-container.list-view .card-img-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* ==========================================================================
+   Empty State UI
+   ========================================================================== */
+
+.empty-results-box {
+  background-color: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px dashed var(--border-light);
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  margin: 2rem 0;
+}
+
+.empty-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem auto;
+}
+
+.empty-results-box h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.empty-results-box p {
+  color: var(--text-muted);
+  max-width: 440px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 0.95rem;
+}
+
+/* Mobile Filter Trigger Button */
+.btn-mobile-filter {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .btn-mobile-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-pill);
+    background-color: #ffffff;
+    border: 1.5px solid var(--border-light);
+    color: var(--text-primary);
+  }
+}
