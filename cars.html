@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Fleet | DriveEase – Premium Car Rental Marketplace</title>
+  
+  <meta name="description" content="Browse verified SUVs, sedans, luxury, and electric vehicles on DriveEase. Instant search, transparent pricing, and flexible rental filters." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cars.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg de-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <div class="brand-icon-box">
+          <i class="bi bi-car-front-fill"></i>
+        </div>
+        <span class="brand-text">Drive<span>Ease</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#driveNavbar" aria-controls="driveNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="driveNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="cars.html">Explore Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#how-it-works">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#why-driveease">About Us</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="profile.html?tab=favorites" class="nav-wishlist-btn" title="View Saved Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="nav-wishlist-badge">0</span>
+          </a>
+
+          <div id="navAuthContainer" class="d-flex align-items-center gap-2">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Listing Page Header -->
+  <header class="listing-hero-banner">
+    <div class="container">
+      <div class="listing-badge">
+        <i class="bi bi-shield-check"></i> 100% Verified Fleet
+      </div>
+      <h1 class="listing-hero-title">Find your perfect ride</h1>
+      <p class="listing-hero-subtitle">
+        Explore our curated collection of vehicles for every occasion. From economical city hatchbacks to majestic luxury sedans and rugged 4x4 offroaders.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Desktop Sidebar Filter (Col 3) -->
+      <aside class="col-lg-3 d-none d-lg-block">
+        <div class="filter-sidebar-card">
+          <div class="filter-sidebar-header">
+            <h3 class="filter-sidebar-title">
+              <i class="bi bi-sliders text-success"></i> Filters
+            </h3>
+            <button class="btn-reset-filters" type="button">Reset All</button>
+          </div>
+
+          <!-- Price Slider -->
+          <div class="filter-group">
+            <div class="filter-group-title">
+              <span>Price Range</span>
+              <span class="text-success fw-bold text-xs" id="maxPriceDisplay">₹12,000</span>
+            </div>
+            <div class="price-slider-container">
+              <input 
+                type="range" 
+                class="price-slider-track" 
+                id="priceRangeInput" 
+                min="1000" 
+                max="12000" 
+                step="500" 
+                value="12000" 
+              />
+              <div class="price-label-row">
+                <span>₹1,000</span>
+                <span>₹12,000/day</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle Category -->
+          <div class="filter-group">
+            <div class="filter-group-title">Category</div>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterCategory" value="SUV" />
+                <span>SUVs</span>
+              </div>
+              <span class="filter-item-count">6</span>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterCategory" value="Sedan" />
+                <span>Sedans</span>
+              </div>
+              <span class="filter-item-count">2</span>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterCategory" value="Hatchback" />
+                <span>Hatchbacks</span>
+              </div>
+              <span class="filter-item-count">1</span>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterCategory" value="Luxury" />
+                <span>Luxury</span>
+              </div>
+              <span class="filter-item-count">3</span>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterCategory" value="Electric" />
+                <span>Electric</span>
+              </div>
+              <span class="filter-item-count">1</span>
+            </label>
+          </div>
+
+          <!-- Brand -->
+          <div class="filter-group">
+            <div class="filter-group-title">Brand</div>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Hyundai" />
+                <span>Hyundai</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Kia" />
+                <span>Kia</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Tata" />
+                <span>Tata Motors</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Honda" />
+                <span>Honda</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Toyota" />
+                <span>Toyota</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Mahindra" />
+                <span>Mahindra</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="BMW" />
+                <span>BMW</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Mercedes-Benz" />
+                <span>Mercedes-Benz</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="MG" />
+                <span>MG</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterBrand" value="Maruti" />
+                <span>Maruti Suzuki</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Fuel Type -->
+          <div class="filter-group">
+            <div class="filter-group-title">Fuel Type</div>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterFuel" value="Petrol" />
+                <span>Petrol</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterFuel" value="Diesel" />
+                <span>Diesel</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterFuel" value="Electric" />
+                <span>Electric</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterFuel" value="Hybrid" />
+                <span>Hybrid</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Transmission -->
+          <div class="filter-group">
+            <div class="filter-group-title">Transmission</div>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterTransmission" value="Automatic" />
+                <span>Automatic</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterTransmission" value="Manual" />
+                <span>Manual</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Seating Capacity -->
+          <div class="filter-group">
+            <div class="filter-group-title">Seating Capacity</div>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterSeats" value="5" />
+                <span>4 - 5 Seater</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="checkbox" name="filterSeats" value="7" />
+                <span>7 Seater</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Rating -->
+          <div class="filter-group">
+            <div class="filter-group-title">Minimum Rating</div>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="radio" name="filterRating" value="4.8" />
+                <span>4.8 &amp; Above ★</span>
+              </div>
+            </label>
+            <label class="filter-item">
+              <div class="filter-checkbox-label">
+                <input type="radio" name="filterRating" value="4.5" />
+                <span>4.5 &amp; Above ★</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Listing Column (Col 9) -->
+      <section class="col-lg-9">
+        
+        <!-- Controls Top Card -->
+        <div class="listing-controls-card">
+          <div class="row g-3 align-items-center">
+            <!-- Search by Name/Brand -->
+            <div class="col-md-5">
+              <div class="search-input-wrapper">
+                <i class="bi bi-search"></i>
+                <input 
+                  type="text" 
+                  id="carSearchInput" 
+                  class="search-cars-input" 
+                  placeholder="Search by car name, brand, or model..." 
+                />
+                <button type="button" class="btn-clear-search" id="clearSearchBtn" title="Clear search">
+                  <i class="bi bi-x-circle-fill"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Location Dropdown -->
+            <div class="col-6 col-md-3">
+              <select class="select-control-box w-100" id="locationFilterSelect">
+                <option value="All">All Locations</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Salem">Salem</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Mumbai">Mumbai</option>
+              </select>
+            </div>
+
+            <!-- Sort Dropdown -->
+            <div class="col-6 col-md-3">
+              <select class="select-control-box w-100" id="sortSelect">
+                <option value="popular">Most Popular</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+              </select>
+            </div>
+
+            <!-- View Layout Switcher & Mobile Filter Trigger -->
+            <div class="col-12 col-md-1 d-flex justify-content-end align-items-center gap-2">
+              <button class="btn-mobile-filter d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilterDrawer" aria-controls="mobileFilterDrawer">
+                <i class="bi bi-sliders"></i> Filters
+              </button>
+
+              <div class="view-switcher-group">
+                <button type="button" class="btn-view-toggle active" id="btnGridView" title="Grid View">
+                  <i class="bi bi-grid-fill"></i>
+                </button>
+                <button type="button" class="btn-view-toggle" id="btnListView" title="List View">
+                  <i class="bi bi-view-list"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Counter & Active Filter Chips -->
+        <div class="results-summary-row">
+          <div class="results-count-text" id="carsCountDisplay">
+            Showing <span>14</span> vehicles
+          </div>
+          <div id="activeFilterChips"></div>
+        </div>
+
+        <!-- Vehicle Cards Container -->
+        <div class="row g-4 cars-container" id="carsGridContainer">
+          <!-- Rendered dynamically by cars.js -->
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Mobile Offcanvas Filter Drawer -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilterDrawer" aria-labelledby="mobileFilterDrawerLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="mobileFilterDrawerLabel">
+        <i class="bi bi-sliders text-success me-2"></i> Filter Vehicles
+      </h5>
+      <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="text-muted small mb-3">Adjust your vehicle criteria to refine results.</p>
+      <button class="btn-drive-outline w-100 mb-3" onclick="resetAllFilters()" data-bs-dismiss="offcanvas">
+        <i class="bi bi-arrow-counterclockwise"></i> Reset All Filters
+      </button>
+      <button class="btn-drive-lime w-100" data-bs-dismiss="offcanvas">
+        View Results
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="de-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand-title">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-car-front-fill"></i>
+            </div>
+            Drive<span>Ease</span>
+          </div>
+          <p class="footer-desc">
+            DriveEase is India's premier car rental marketplace. Redefining urban and highway mobility with verified vehicles, zero hidden costs, and exceptional customer experience.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Explore Cars</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="profile.html?tab=bookings">My Bookings</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Popular Hubs</h4>
+          <ul class="footer-nav-list">
+            <li><a href="cars.html?location=Chennai">Chennai Airport Hub</a></li>
+            <li><a href="cars.html?location=Bangalore">Bangalore Indiranagar</a></li>
+            <li><a href="cars.html?location=Hyderabad">Hyderabad HITEC City</a></li>
+            <li><a href="cars.html?location=Mumbai">Mumbai Airport &amp; BKC</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">24/7 Helpline</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div>+91 (044) 4800 2400</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div>support@driveease.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 DriveEase Technologies Pvt. Ltd. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cars-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cars.js"></script>
+</body>
+</html>

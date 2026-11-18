@@ -1,0 +1,414 @@
+/* ==========================================================================
+   DriveEase – Booking & Checkout Styles
+   ========================================================================== */
+
+.booking-page-header {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-slate) 100%);
+  color: #ffffff;
+  padding: 3rem 0 2.5rem 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.booking-header-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.booking-header-subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   Booking Form Cards
+   ========================================================================== */
+
+.booking-section-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.booking-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+.booking-step-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-slate));
+  color: var(--accent-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.booking-section-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+  color: var(--text-primary);
+}
+
+.booking-section-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* Duration Banner */
+.rental-duration-banner {
+  background-color: var(--accent-lime-subtle);
+  border: 1px solid rgba(16, 229, 117, 0.3);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  font-weight: 600;
+  color: #065f46;
+}
+
+.duration-days-badge {
+  background-color: #ffffff;
+  color: var(--primary-dark);
+  font-weight: 800;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.88rem;
+}
+
+/* Add-ons list */
+.addon-item-box {
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.addon-item-box:hover {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.addon-item-box.selected {
+  border-color: var(--accent-lime-active);
+  background-color: #f0fdf4;
+}
+
+.addon-info-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.addon-info-left input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent-lime-active);
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.addon-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.addon-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.addon-price-tag {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Demo Payment Method Tabs */
+.payment-nav-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-tab-btn {
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.payment-tab-btn i {
+  font-size: 1.35rem;
+}
+
+.payment-tab-btn:hover {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.payment-tab-btn.active {
+  background-color: #ffffff;
+  border-color: var(--accent-lime-active);
+  color: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(16, 229, 117, 0.2);
+}
+
+.payment-pane {
+  display: none;
+}
+
+.payment-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Order Summary (Sticky Right Column)
+   ========================================================================== */
+
+.checkout-summary-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-xl);
+  padding: 2rem;
+  position: sticky;
+  top: 90px;
+}
+
+.summary-car-card {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+.summary-car-thumb {
+  width: 100px;
+  height: 75px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background-color: #e2e8f0;
+  flex-shrink: 0;
+}
+
+.summary-car-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.summary-car-brand {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.summary-car-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.summary-car-rate {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-lime-active);
+}
+
+/* Promo Code Box */
+.promo-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.promo-input {
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  flex-grow: 1;
+  outline: none;
+}
+
+.promo-input:focus {
+  border-color: var(--accent-lime-active);
+}
+
+.btn-apply-promo {
+  padding: 0.6rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+}
+
+/* Price Breakdown Rows */
+.price-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.25rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.price-row.discount-row {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.price-row.total-row {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  padding-top: 0.5rem;
+}
+
+.price-row.total-row .total-amount {
+  color: var(--primary-dark);
+}
+
+.demo-safe-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Confirmation Success Modal */
+.modal-confirm-content {
+  border-radius: var(--radius-xl);
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+.confirm-success-header {
+  background: linear-gradient(135deg, var(--primary-navy), var(--primary-dark));
+  color: #ffffff;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.success-check-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--accent-lime);
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 1.25rem auto;
+  box-shadow: 0 8px 25px rgba(16, 229, 117, 0.4);
+}
+
+.confirm-booking-id {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-top: 0.5rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-lime);
+}
+
+.confirm-voucher-body {
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.voucher-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background-color: var(--bg-subtle);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+}
+
+.voucher-item-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.voucher-item-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
