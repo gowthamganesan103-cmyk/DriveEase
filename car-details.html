@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Details | DriveEase Premium Fleet</title>
+  
+  <meta name="description" content="View complete specifications, features, rental rates, and gallery for verified vehicles on DriveEase." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/details.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg de-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <div class="brand-icon-box">
+          <i class="bi bi-car-front-fill"></i>
+        </div>
+        <span class="brand-text">Drive<span>Ease</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#driveNavbar" aria-controls="driveNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="driveNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="cars.html">Explore Cars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#how-it-works">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#why-driveease">About Us</a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="profile.html?tab=favorites" class="nav-wishlist-btn" title="View Saved Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="nav-wishlist-badge">0</span>
+          </a>
+
+          <div id="navAuthContainer" class="d-flex align-items-center gap-2">
+            <!-- Rendered by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb Bar -->
+  <div class="de-breadcrumb-bar">
+    <div class="container">
+      <ul class="de-breadcrumb">
+        <li class="de-breadcrumb-item"><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+        <li class="de-breadcrumb-item"><i class="bi bi-chevron-right text-muted text-xs"></i></li>
+        <li class="de-breadcrumb-item"><a href="cars.html">Fleet</a></li>
+        <li class="de-breadcrumb-item"><i class="bi bi-chevron-right text-muted text-xs"></i></li>
+        <li class="de-breadcrumb-item active" id="breadcrumbCarName">Car Details</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Vehicle Details Content -->
+  <main class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Left Column: Gallery, Specs & Features (Col 8) -->
+      <div class="col-lg-8">
+        
+        <!-- Gallery Card -->
+        <div class="details-gallery-card">
+          <div class="main-image-viewport">
+            <span class="gallery-badge-category" id="galleryCategoryBadge">SUV</span>
+            <img 
+              id="mainDetailsImage" 
+              src="assets/images/placeholder-car.jpg" 
+              alt="Vehicle Preview" 
+            />
+          </div>
+          <!-- Thumbnails Strip -->
+          <div class="gallery-thumbnails-strip" id="galleryThumbnails">
+            <!-- Populated dynamically by details.js -->
+          </div>
+        </div>
+
+        <!-- Vehicle Details & Specs Card -->
+        <div class="details-content-card">
+          <div class="details-card-header">
+            <div class="details-car-brand" id="detailsCarBrand">Brand</div>
+            <h1 class="details-car-title" id="detailsCarTitle">Car Model Name</h1>
+
+            <div class="details-meta-row">
+              <div class="details-rating-badge">
+                <i class="bi bi-star-fill text-warning"></i>
+                <span id="detailsRatingVal">4.8</span>
+                <span class="text-muted fw-normal ms-1" id="detailsReviewsCount">(168 reviews)</span>
+              </div>
+              <div class="details-location-badge">
+                <i class="bi bi-geo-alt-fill text-danger"></i>
+                <span id="detailsLocationText">Chennai &bull; Central Hub</span>
+              </div>
+              <div class="details-status-badge">
+                <i class="bi bi-patch-check-fill"></i> Available Now
+              </div>
+            </div>
+          </div>
+
+          <!-- Specifications Grid -->
+          <h3 class="details-section-title">
+            <i class="bi bi-sliders2 text-success"></i> Key Specifications
+          </h3>
+          <div class="specs-modern-grid" id="specsGridContainer">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- Description -->
+          <h3 class="details-section-title mt-4">
+            <i class="bi bi-card-text text-success"></i> Vehicle Overview
+          </h3>
+          <p class="text-secondary leading-relaxed mb-4" id="detailsCarDescription" style="font-size: 1.02rem;">
+            Detailed vehicle overview loading...
+          </p>
+
+          <!-- Key Features Checklist -->
+          <h3 class="details-section-title mt-4">
+            <i class="bi bi-shield-check text-success"></i> Premium Features &amp; Safety
+          </h3>
+          <div class="features-two-col" id="featuresChecklist">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- Rental Terms & Policies -->
+          <h3 class="details-section-title mt-4">
+            <i class="bi bi-file-earmark-text text-success"></i> Rental Policy &amp; Guidelines
+          </h3>
+          <div class="bg-light p-3 rounded-3 border">
+            <ul class="mb-0 text-secondary small" style="line-height: 1.8;">
+              <li><strong>Driver Age:</strong> Minimum 21 years of age with a valid driving license (min. 1 year old).</li>
+              <li><strong>Required Documents:</strong> Original Indian Driving License and Aadhar Card / Passport for identity verification during pickup.</li>
+              <li><strong>Fuel Policy:</strong> Full-to-Full. The vehicle is provided with a full tank and should be returned with a full tank.</li>
+              <li><strong>Cancellation:</strong> 100% full refund if cancelled up to 24 hours prior to scheduled reservation time.</li>
+              <li><strong>Security Deposit:</strong> 100% refundable security deposit credited back within 4-6 hours post inspection.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sticky Booking Card & Guarantees (Col 4) -->
+      <div class="col-lg-4">
+        <div class="booking-sticky-sidebar">
+          
+          <!-- Booking Card -->
+          <div class="booking-price-card">
+            <div class="booking-card-rate-header">
+              <div>
+                <span class="rate-amount" id="bookingCardDailyRate">₹2,499</span>
+                <span class="rate-unit">/ day</span>
+              </div>
+              <span class="badge bg-success-subtle text-success fw-bold px-2 py-1 rounded">Best Price Guaranteed</span>
+            </div>
+
+            <!-- Quick Form -->
+            <form class="quick-book-form" onsubmit="return false;">
+              <div class="quick-book-field">
+                <label class="quick-book-label"><i class="bi bi-calendar-event me-1"></i> Pickup Date</label>
+                <input type="date" class="quick-book-input" id="quickPickupDate" />
+              </div>
+
+              <div class="quick-book-field">
+                <label class="quick-book-label"><i class="bi bi-calendar-check me-1"></i> Return Date</label>
+                <input type="date" class="quick-book-input" id="quickReturnDate" />
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center bg-light p-2 rounded border mt-2">
+                <span class="text-muted small">Duration:</span>
+                <span class="fw-bold text-dark small" id="quickDaysDisplay">3 Days</span>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center bg-light p-2 rounded border">
+                <span class="text-muted small">Estimated Base Total:</span>
+                <span class="fw-bold text-success fs-5" id="quickEstimatedTotal">₹7,997</span>
+              </div>
+
+              <div class="text-muted text-xs text-center" id="bookingDepositNote">
+                Refundable Security Deposit: ₹3,500
+              </div>
+
+              <a href="booking.html" class="btn-drive-lime btn-proceed-booking" id="proceedToBookingBtn">
+                <i class="bi bi-lightning-charge-fill"></i> Book This Car
+              </a>
+
+              <button type="button" class="btn-toggle-favorite-large" id="detailsFavoriteBtn">
+                <i class="bi bi-heart"></i> Save to Favorites
+              </button>
+            </form>
+          </div>
+
+          <!-- Rental Guarantees Box -->
+          <div class="booking-guarantee-card">
+            <h5 class="fw-bold fs-6 mb-3"><i class="bi bi-patch-check-fill text-success me-2"></i> Included with Every Rental</h5>
+            <div class="guarantee-item">
+              <i class="bi bi-shield-fill-check"></i>
+              <span>Comprehensive Third-Party &amp; Collision Protection</span>
+            </div>
+            <div class="guarantee-item">
+              <i class="bi bi-headset"></i>
+              <span>24/7 Nationwide Roadside Assistance</span>
+            </div>
+            <div class="guarantee-item">
+              <i class="bi bi-arrow-repeat"></i>
+              <span>Free Cancellation up to 24 hrs before pickup</span>
+            </div>
+            <div class="guarantee-item">
+              <i class="bi bi-stars"></i>
+              <span>Deep Sanitization &amp; 45-Point Safety Check</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Related Vehicles Section -->
+    <div class="mt-5 pt-4 border-top">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <span class="section-tag"><i class="bi bi-arrow-left-right"></i> Similar Options</span>
+          <h2 class="section-title">Related Vehicles You Might Like</h2>
+        </div>
+        <a href="cars.html" class="btn-drive-outline">View All Fleet <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="row g-4" id="relatedCarsContainer">
+        <!-- Rendered by details.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="de-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand-title">
+            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-car-front-fill"></i>
+            </div>
+            Drive<span>Ease</span>
+          </div>
+          <p class="footer-desc">
+            DriveEase is India's premier car rental marketplace. Redefining urban and highway mobility with verified vehicles, zero hidden costs, and exceptional customer experience.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Explore Cars</a></li>
+            <li><a href="profile.html?tab=bookings">My Bookings</a></li>
+            <li><a href="profile.html?tab=favorites">Saved Wishlist</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">City Hubs</h4>
+          <ul class="footer-nav-list">
+            <li><a href="cars.html?location=Chennai">Chennai Airport</a></li>
+            <li><a href="cars.html?location=Bangalore">Bangalore Hub</a></li>
+            <li><a href="cars.html?location=Hyderabad">Hyderabad Central</a></li>
+            <li><a href="cars.html?location=Mumbai">Mumbai BKC Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">24/7 Helpline</h4>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <div>+91 (044) 4800 2400</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <div>concierge@driveease.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 DriveEase Technologies Pvt. Ltd. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cars-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/details.js"></script>
+</body>
+</html>
