@@ -1,0 +1,14 @@
+
+{
+  "emeraldwalk.runonsave": {
+    "ignoreUnchangedFiles": true,
+    "commands": [
+      {
+        "match": "\\.(java|html|css|js|ts|jsx|tsx|json|xml|sql|md|properties|yml|yaml|py)$",
+        "notMatch": "\\.vscode[\\\\/]|\\.git[\\\\/]",
+        "cmd": "git -C \"${workspaceFolder}\" add -A && (git -C \"${workspaceFolder}\" diff --cached --quiet || (git -C \"${workspaceFolder}\" commit -m \"Auto commit on save\" && git -C \"${workspaceFolder}\" push origin backend))",
+        "autoShowOutputPanel": "error"
+      }
+    ]
+  }
+}
