@@ -1,3 +1,3 @@
 # DriveEase
 Auto Commit and Push Testing
-Testing automatic GitHub pushg
+Testing automatic GitHub pushgit
