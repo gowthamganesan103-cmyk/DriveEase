@@ -230,6 +230,7 @@ function renderNavbarAuthState() {
           <li><a class="dropdown-item py-2 d-flex align-items-center gap-2" href="profile.html"><i class="bi bi-person-circle text-primary"></i> My Profile</a></li>
           <li><a class="dropdown-item py-2 d-flex align-items-center gap-2" href="profile.html?tab=bookings"><i class="bi bi-calendar2-check text-success"></i> My Bookings</a></li>
           <li><a class="dropdown-item py-2 d-flex align-items-center gap-2" href="profile.html?tab=favorites"><i class="bi bi-heart text-danger"></i> Saved Wishlist</a></li>
+          <li><a class="dropdown-item py-2 d-flex align-items-center gap-2" href="admin-login.html"><i class="bi bi-shield-lock text-warning"></i> Admin Portal</a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item py-2 text-danger d-flex align-items-center gap-2" href="#" onclick="logoutUser(); return false;"><i class="bi bi-box-arrow-right"></i> Log Out</a></li>
         </ul>
